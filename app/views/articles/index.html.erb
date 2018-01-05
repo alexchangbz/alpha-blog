@@ -5,7 +5,12 @@
   <p><strong>You now have <%= @articles.count %> numbers of articles</strong></p>
 </div>
 
-
-
+<div align="center">
+  <%= will_paginate @articles %>
+</div>
 
 <%= render 'article', obj: @articles %>
+
+<div align="center">
+  <%= will_paginate @articles %>
+</div>
