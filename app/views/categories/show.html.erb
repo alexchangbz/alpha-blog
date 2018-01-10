@@ -1,0 +1,17 @@
+<!-- Display the individual category's articles in the show page. ref: Section 7, Lecture 149-->
+<h1 align="center"><%= "Category: " + @category.name %></h1>
+
+
+<div class="col-xs-8 col-xs-offset-2">
+  <p><strong>You now have <%= @category_articles.count %> numbers of articles on <%= @category.name %></strong></p>
+</div>
+
+<div align="center">
+  <%= will_paginate @category_articles %>
+</div>
+
+<%= render 'articles/article', obj: @category_articles %>
+
+<div align="center">
+  <%= will_paginate @category_articles %>
+</div>

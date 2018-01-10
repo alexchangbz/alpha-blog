@@ -21,7 +21,9 @@ class CategoriesController < ApplicationController
   end
   
   def show
-    
+    # Link data to category/show file. ref: Section 7, Lecture 149
+    @category = Category.find(params[:id])
+    @category_articles = @category.articles.paginate(page: params[:page], per_page: 5)
   end
   
   private

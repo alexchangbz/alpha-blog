@@ -21,8 +21,16 @@
       </div>
     </div>
 
-      
-     
+    <!--Add association from UI whereby user have to choose the category for their articles to be in. ref: Section 7, Lecture 147 -->
+    <div class="form-group">
+      <div class="row">
+        <div class="col-sm-offset-2 col-sm-8">
+          <%= f.collection_check_boxes :category_ids, Category.all, :id, :name do |cb| %>
+            <%= cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox") + cb.text} %>
+          <% end %>
+        </div>
+      </div>
+    </div>
 
    
     <div class="form-group">

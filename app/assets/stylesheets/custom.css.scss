@@ -72,6 +72,19 @@ $navbar-default-bg: black;
   padding-left: 0;
 }
 
+// Styling the article category in the article pages. ref: Section 7, Lecture 149
+.badge {
+  background-color: #CEF6F5;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+// Styling for the input checkbox. ref: Section 7, Lecture 149
+.input_checkbox input {
+  width: auto !important;
+}
+
 footer {
   margin-top: 45px;
   padding-top: 5px;
