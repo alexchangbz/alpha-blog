@@ -20,6 +20,21 @@ class CategoriesController < ApplicationController
     end
   end
   
+  # Input edit and update function for editing category. ref: Section 7, Lecture 151
+  def edit
+    @category = Category.find(params[:id])
+  end
+  
+  def update
+    @category = Category.find(params[:id])
+    if @category.update(category_params)
+      flash[:success] = "Name was successfully updated"
+      redirect_to category_path(@category)
+    else
+      render 'edit'
+    end
+  end
+  
   def show
     # Link data to category/show file. ref: Section 7, Lecture 149
     @category = Category.find(params[:id])

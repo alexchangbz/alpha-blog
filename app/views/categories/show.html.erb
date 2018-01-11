@@ -1,8 +1,16 @@
 <!-- Display the individual category's articles in the show page. ref: Section 7, Lecture 149-->
 <h1 align="center"><%= "Category: " + @category.name %></h1>
 
+<!--Create a path for user admin to edit category name. ref: Section 7, Lecture 151 -->
+<% if logged_in? and current_user.admin? %>
+<div align="center">
+  <div class="row">
+    <span class="badge"><%= link_to "Edit Category Name", edit_category_path(@category) %></span>
+  </div>
+</div>
+<% end %>
 
-<div class="col-xs-8 col-xs-offset-2">
+<div class="col-xs-10 col-xs-offset-2">
   <p><strong>You now have <%= @category_articles.count %> numbers of articles on <%= @category.name %></strong></p>
 </div>
 
